@@ -12,8 +12,28 @@ POST http://localhost:3001/api/persons
 Content-Type: application/json
 
 {
+    "name": "as",
+    "number": "6969"
+}
+
+###
+
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
     "name": "",
     "number": "6969420420"
+}
+
+###
+
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "name": "Arto Hellas",
+    "number": ""
 }
 
 ###

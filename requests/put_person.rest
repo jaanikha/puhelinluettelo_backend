@@ -1,0 +1,17 @@
+PUT http://localhost:3001/api/persons/60aa795860fca429586b5e84
+Content-Type: application/json
+
+{
+    "name": "testimies",
+    "number": "6969"
+}
+
+###
+
+PUT http://localhost:3001/api/persons/60aa795860fca429586b5e84
+Content-Type: application/json
+
+{
+    "name": "testimies",
+    "number": "420420"
+}
