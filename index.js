@@ -13,9 +13,6 @@ morgan.token('phonebookEntry', function (req, res) { return JSON.stringify(req.b
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :phonebookEntry'))
 
 
-// const Person = mongoose.model('Person', personSchema)
-
-
 let persons = [
       {
         id: 1,
@@ -66,19 +63,19 @@ const genId = () => {
 }
 
 
-// http://localhost:3001
+
 app.get('/', (req, res) => {
   res.send('<h1>Hello World!</h1>')
 })
 
-// http://localhost:3001/api/persons
+
 app.get('/api/persons', (req, res) => {
   Person.find({}).then(persons => {
   res.json(persons)
   })
 })
 
-// http://localhost:3001/api/persons/60a7b974b2cfc70cc84b5c28
+
 app.get('/api/persons/:id', (req, res, next) => {
   Person.findById(req.params.id).then(person => {
     if (person) {
@@ -90,7 +87,7 @@ app.get('/api/persons/:id', (req, res, next) => {
   .catch(error => next(error))
 })
 
-// http://localhost:3001/api/info
+
 app.get('/api/info', (req, res) => {
     const date = new Date()
     const info =  `<div><p> Phonebook has info for ${persons.length} people </p>
@@ -108,25 +105,10 @@ app.delete('/api/persons/:id', (req, res, next) => {
 })
 
 
-// http://localhost:3001/api/persons
 app.post('/api/persons', (req, res, next) => {
   const body = req.body
 
   console.log(JSON.stringify(req.body));
-
-  // if (!body.name) {
-  //   return res.status(400).json({ 
-  //     error: 'name is missing' 
-  //   })
-  // }
-  // if ( persons.map(person => person.name.toLowerCase()).indexOf(person.name.toLowerCase()) !== -1 ) {
-  //   return res.status(400).json({ 
-  //     error: 'name must be unique' 
-  //   })
-  // }  
-  // person.id = genId()
-  // console.log(person);
-  // res.json(person)
 
   const person = new Person({
     name: body.name,
